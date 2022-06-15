@@ -1,0 +1,33 @@
+expname = example_training
+basedir = ./logs
+datadir = /path/to/data/
+dataset_type = llff
+
+factor = 1
+llffhold = 8
+llff_renderpath=fixidentity
+
+N_rand = 2048
+N_samples = 32
+N_importance = 32
+
+use_viewdirs = True
+raw_noise_std = 1e0
+
+davinci_endoscopic=True
+use_fgmask=True
+use_depth=True
+depth_sampling_sigma=1.0
+depth_refine_period=4000
+depth_refine_quantile=0.1
+
+nerf_type = direct_temporal
+no_batching = True
+not_zero_canonical = False
+
+i_print = 200
+i_testset = 50000
+i_weights = 4000
+i_video = 100000
+video_fps = 10
+
