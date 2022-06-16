@@ -1,6 +1,6 @@
-# EndoNeRF
+# Neural Rendering for Stereo 3D Reconstruction of Deformable Tissues in Robotic Surgery, MICCAI 2022.
 
-### Neural Rendering for Stereo 3D Reconstruction of Deformable Tissues in Robotic Surgery, MICCAI 2022.
+Implementation for MICCAI 2022 paper **[Neural Rendering for Stereo 3D Reconstruction of Deformable Tissues in Robotic Surgery](https://github.com/med-air/EndoNeRF)** by [Yuehao Wang], [Yonghao Long], [Siu Hin Fan], and [Qi Dou](http://www.cse.cuhk.edu.hk/~qdou/).
 
 A NeRF-based framework for Stereo Endoscopic Surgery Scene Reconstruction (EndoNeRF).
 
