@@ -4,9 +4,11 @@ Implementation for MICCAI 2022 paper **[Neural Rendering for Stereo 3D Reconstru
 
 A NeRF-based framework for Stereo Endoscopic Surgery Scene Reconstruction (EndoNeRF).
 
+```
 **[\[Paper\]]() [\[Website\]]() [\[Sample Dataset\]]()** (coming soon...)
+```
 
-
+## Demo
 https://user-images.githubusercontent.com/6317569/173825509-41513eb4-3496-4b8b-814b-73f7e960d31a.mp4
 
 
