@@ -15,6 +15,12 @@
             background-size: cover;
             width: 100%;
         }
+        .banner h5 a {
+            text-decoration: none;
+        }
+        .text-justify {
+            text-align: justify;
+        }
     </style>
 </head>
 <body>
@@ -26,15 +32,15 @@
                         <div class="container-fluid col-10">
                             <h1>Neural Rendering for Stereo 3D Reconstruction of Deformable Tissues in Robotic Surgery</h1>
                         </div>
-                        <h4 style="color:#5a6268;"> MICCAI 2022 (Early Accept) </h4>
+                        <h4 style="color:#5a6268;"> MICCAI 2022 (Student Travel Award) </h4>
                         <hr>
                         <h5><a href="https://yuehaowang.github.io/" target="_blank">Yuehao Wang</a>, <a href="https://scholar.google.com/citations?user=HIjQdFQAAAAJ">Yonghao Long</a>, Siu Hin Fan, <a href="http://www.cse.cuhk.edu.hk/~qdou">Qi Dou</a></h5>
                         <p>The Chinese University of Hong Kong</p>
                         <p class="mt-4">
-                            <a class="btn btn-outline-dark btn-lg" href="" role="button"><i class="bi-file-text"></i> Paper</a>
+                            <a class="btn btn-outline-dark btn-lg" href="https://arxiv.org/abs/2206.15255" role="button"><i class="bi-file-text"></i> Paper</a>
                             <a class="btn btn-outline-dark btn-lg" href="https://github.com/med-air/EndoNeRF/" role="button"><i class="bi-github"></i> Code</a>
                             <!-- <a class="btn btn-outline-dark btn-lg" href="" role="button"><i class="bi-image"></i> Poster</a> -->
-                            <a class="btn btn-outline-dark btn-lg" href="" role="button"><i class="bi-server"></i> Sample Dataset</a>
+                            <a class="btn btn-outline-dark btn-lg" href="https://forms.gle/1VAqDJTEgZduD6157" role="button"><i class="bi-server"></i> Sample Dataset</a>
                         </p>
                     </div>
                 </div>
@@ -53,7 +59,7 @@
                     </div>
                     <br>
                     <p class="text-justify">
-                        Reconstruction of the soft tissues in robotic surgery from endoscopic stereo videos is important for many applications such as intra-operative navigation and image-guided robotic surgery automation. Previous works on this task mainly rely on SLAM-based approaches, which struggle to handle complex surgical scenes. Inspired by recent progress in neural rendering, we present a novel framework for deformable tissue reconstruction from binocular captures in robotic surgery under the single-viewpoint setting. Our framework adopts dynamic neural radiance fields to represent deformable surgical scenes in MLPs and optimize shapes and deformations in a learning-based manner. In addition to non-rigid deformations, tool occlusion and poor 3D clues from a single viewpoint are also  particular challenges in soft tissue reconstruction. To overcome these difficulties, we present a series of strategies of tool mask-guided ray casting, stereo depth-cueing ray marching and stereo depth-supervised optimization.
+                        Reconstruction of the soft tissues in robotic surgery from endoscopic stereo videos is important for many applications such as intra-operative navigation and image-guided robotic surgery automation. Previous works on this task mainly rely on SLAM-based approaches, which struggle to handle complex surgical scenes. Inspired by recent progress in neural rendering, we present a novel framework for deformable tissue reconstruction from binocular captures in robotic surgery under the single-viewpoint setting. Our framework adopts dynamic neural radiance fields to represent deformable surgical scenes in MLPs and optimize shapes and deformations in a learning-based manner. In addition to non-rigid deformations, tool occlusion and poor 3D clues from a single viewpoint are also particular challenges in soft tissue reconstruction. To overcome these difficulties, we present a series of strategies of tool mask-guided ray casting, stereo depth-cueing ray marching and stereo depth-supervised optimization.
                         <!-- With experiments on DaVinci robotic surgery videos, our method significantly outperforms the current state-of-the-art reconstruction method for handling various complex non-rigid deformations.
                         To our best knowledge, this is the first work leveraging neural rendering for surgical scene 3D reconstruction with remarkable potential demonstrated. -->
                     </p>
@@ -61,7 +67,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="mt-4">
             <div class="container bg-light">
                 <div class="p-4">
                     <h2>Method</h2>
@@ -81,7 +87,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="mt-4">
             <div class="container">
                 <div class="p-4">
                     <h2>Results and Comparisons</h2>
@@ -144,7 +150,7 @@
             </div>
         </section>
         
-        <section>
+        <section class="mt-4">
             <div class="container">
                 <div class="p-4">
                     <h2>Bibtex</h2>
@@ -153,11 +159,13 @@
                     </p>
                     <div class="text-left col-12 p-3" style="background-color:#eeeeee;">
                         <pre><code>
-@article{wang2022nerfsurgery,
+@misc{wang2022neural,
     title={Neural Rendering for Stereo 3D Reconstruction of Deformable Tissues in Robotic Surgery},
     author={Wang, Yuehao and Long, Yonghao and Fan, Siu Hin and Dou, Qi},
-    journal={arXiv preprint},
-    year={2022}
+    year={2022},
+    eprint={2206.15255},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
 }</code></pre>
                     </div>
                 </div>
