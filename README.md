@@ -70,6 +70,21 @@ python vis_pc.py --pc_dir logs/{expname}/reconstructed_pcds_{epoch}
 
 Type `python vis_pc.py -h` for more options of the visualizer.
 
+## Bibtex
+
+If you find this work helpful, you can cite our paper as follows:
+
+```
+@misc{wang2022neural,
+    title={Neural Rendering for Stereo 3D Reconstruction of Deformable Tissues in Robotic Surgery},
+    author={Wang, Yuehao and Long, Yonghao and Fan, Siu Hin and Dou, Qi},
+    year={2022},
+    eprint={2206.15255},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
+```
+
 ## Acknowledgement
 
 - Our code is based on [D-NeRF](https://github.com/albertpumarola/D-NeRF) and [NeRF-pytorch](https://github.com/yenchenlin/nerf-pytorch).
