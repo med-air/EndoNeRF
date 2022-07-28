@@ -700,11 +700,11 @@ def config_parser():
     parser.add_argument("--skip_frames", nargs='+', type=int, default=[], 
                         help='skip frames for training')
 
-    ## deepvoxels flags
+    ## deepvoxels flags (unused)
     parser.add_argument("--shape", type=str, default='greek', 
                         help='options : armchair / cube / greek / vase')
 
-    ## blender flags
+    ## blender flags (unused)
     parser.add_argument("--white_bkgd", action='store_true', 
                         help='set to render synthetic data on a white bkgd (always use for dvoxels)')
     parser.add_argument("--half_res", action='store_true', 
@@ -769,8 +769,8 @@ def train():
             i_test = np.arange(images.shape[0])[1:-1:args.llffhold]
 
         i_val = i_test
-        i_train = np.array([i for i in np.arange(int(images.shape[0])) if (i not in args.skip_frames)])
-
+        i_train = np.array([i for i in np.arange(int(images.shape[0])) if (i not in args.skip_frames)])  # use all frames for reconstruction
+        # i_train = np.array([i for i in np.arange(int(images.shape[0])) if (i not in i_test and i not in i_val and i not in args.skip_frames)])  # leave out test/val frames
 
         print('DEFINING BOUNDS')
         

@@ -70,6 +70,22 @@ python vis_pc.py --pc_dir logs/{expname}/reconstructed_pcds_{epoch}
 
 Type `python vis_pc.py -h` for more options of the visualizer.
 
+## Evaluation
+
+First, type the command below to render left views from the optimized model:
+
+```bash
+python run_endonerf.py --config configs/{your_config_file}.txt --render_only
+```
+
+The rendered images will be saved to `logs/{expname}/renderonly_path_fixidentity_{epoch}/estim/`. Then, you can type the command below to acquire quantitative results:
+
+```bash
+python eval_rgb.py --gt_dir /path/to/data/images --mask_dir /path/to/data/gt_masks --img_dir logs/{expname}/renderonly_path_fixidentity_{epoch}/estim/
+```
+
+Note that we only evaluate photometric errors due to the difficulties in collecting geometric ground truth. 
+
 ## Bibtex
 
 If you find this work helpful, you can cite our paper as follows:
