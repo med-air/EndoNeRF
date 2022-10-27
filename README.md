@@ -91,14 +91,14 @@ Note that we only evaluate photometric errors due to the difficulties in collect
 If you find this work helpful, you can cite our paper as follows:
 
 ```
-@misc{wang2022neural,
+@inproceedings{wang2022neural,
     title={Neural Rendering for Stereo 3D Reconstruction of Deformable Tissues in Robotic Surgery},
     author={Wang, Yuehao and Long, Yonghao and Fan, Siu Hin and Dou, Qi},
+    booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+    pages={431--441},
     year={2022},
-    eprint={2206.15255},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
-}
+    organization={Springer}
+  }
 ```
 
 ## Acknowledgement
