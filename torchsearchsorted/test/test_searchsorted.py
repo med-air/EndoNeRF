@@ -16,12 +16,12 @@ def test_searchsorted_output_dtype(device):
 
     out = searchsorted(a, v)
     out_np = numpy_searchsorted(a.cpu().numpy(), v.cpu().numpy())
-    assert out.dtype == torch.long
+    assert out.dtype == torch.int64 # torch.long
     np.testing.assert_array_equal(out.cpu().numpy(), out_np)
 
-    out = torch.empty(v.shape, dtype=torch.long, device=device)
+    out = torch.empty(v.shape, dtype=torch.int64, device=device) # dtype=torch.long
     searchsorted(a, v, out)
-    assert out.dtype == torch.long
+    assert out.dtype == torch.int64 # dtype=torch.long
     np.testing.assert_array_equal(out.cpu().numpy(), out_np)
 
 Ba_val = [1, 100, 200]

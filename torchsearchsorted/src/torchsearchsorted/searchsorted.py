@@ -31,11 +31,11 @@ def searchsorted(a: torch.Tensor, v: torch.Tensor,
     result_shape = (max(a.shape[0], v.shape[0]), v.shape[1])
     if out is not None:
         assert out.device == a.device, "`out` must be on the same device as `a`"
-        assert out.dtype == torch.long, "out.dtype must be torch.long"
+        assert out.dtype == torch.int64, "out.dtype must be torch.long" # torch.long
         assert out.shape == result_shape, ("If the output tensor is provided, "
                                            "its shape must be correct.")
     else:
-        out = torch.empty(result_shape, device=v.device, dtype=torch.long)
+        out = torch.empty(result_shape, device=v.device, dtype=torch.int64) # dtype=torch.long
 
     if a.is_cuda and not SEARCHSORTED_GPU_AVAILABLE:
         raise Exception('torchsearchsorted on CUDA device is asked, but it seems '
