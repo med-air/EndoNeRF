@@ -1,5 +1,3 @@
-torch
-torchvision
 imageio
 imageio-ffmpeg
 matplotlib
