@@ -1,5 +1,5 @@
 import os
-import imageio
+import imageio.v2 as imageio # import imageio
 import time
 from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm, trange
@@ -40,7 +40,7 @@ def batchify(fn, chunk):
     return ret
 
 
-def run_network(inputs, viewdirs, frame_time, fn, embed_fn, embeddirs_fn, embedtime_fn, netchunk=1024*64,
+def run_network(inputs, viewdirs, frame_time, fn, embed_fn, embeddirs_fn, embedtime_fn, netchunk=256*16, # netchunk=1024*64
                 embd_time_discr=True):
     """Prepares inputs and applies network 'fn'.
     inputs: N_rays x N_points_per_ray x 3
@@ -80,7 +80,7 @@ def run_network(inputs, viewdirs, frame_time, fn, embed_fn, embeddirs_fn, embedt
     return outputs, position_delta
 
 
-def batchify_rays(rays_flat, chunk=1024*32, **kwargs):
+def batchify_rays(rays_flat, chunk=256*8, **kwargs): # chunk=1024*32
     """Render rays in smaller minibatches to avoid OOM.
     """
 
@@ -99,7 +99,7 @@ def batchify_rays(rays_flat, chunk=1024*32, **kwargs):
     return all_ret
 
 
-def render(H, W, focal, chunk=1024*32, rays=None, c2w=None, ndc=True,
+def render(H, W, focal, chunk=256*8, rays=None, c2w=None, ndc=True, # chunk=1024*32
                   near=0., far=1., frame_time=None,
                   use_viewdirs=False, c2w_staticcam=None,
                   **kwargs):
@@ -592,7 +592,7 @@ def config_parser():
     # training options
     parser.add_argument("--nerf_type", type=str, default="original",
                         help='nerf network type')
-    parser.add_argument("--N_iter", type=int, default=100000,
+    parser.add_argument("--N_iter", type=int, default=100000, # default=100000,
                         help='num training iterations')
     parser.add_argument("--netdepth", type=int, default=8, 
                         help='layers in network')
@@ -602,7 +602,7 @@ def config_parser():
                         help='layers in fine network')
     parser.add_argument("--netwidth_fine", type=int, default=256, 
                         help='channels per layer in fine network')
-    parser.add_argument("--N_rand", type=int, default=32*32*4, 
+    parser.add_argument("--N_rand", type=int, default=8*8*1, # default=32*32*4,
                         help='batch size (number of random rays per gradient step)')
     parser.add_argument("--do_half_precision", action='store_true',
                         help='do half precision training and inference')
@@ -610,9 +610,9 @@ def config_parser():
                         help='learning rate')
     parser.add_argument("--lrate_decay", type=int, default=250, 
                         help='exponential learning rate decay (in 1000 steps)')
-    parser.add_argument("--chunk", type=int, default=1024*32, 
+    parser.add_argument("--chunk", type=int, default=256*8, # default=1024*32,
                         help='number of rays processed in parallel, decrease if running out of memory')
-    parser.add_argument("--netchunk", type=int, default=1024*64, 
+    parser.add_argument("--netchunk", type=int, default=256*16, # default=1024*64,
                         help='number of pts sent through network in parallel, decrease if running out of memory')
     parser.add_argument("--no_batching", action='store_true', 
                         help='only take random rays from 1 image at a time')
@@ -748,7 +748,7 @@ def train():
     args = parser.parse_args()
 
     # Load data
-
+    print("train, load data")
     if args.dataset_type == 'blender':
         raise NotImplementedError
 
