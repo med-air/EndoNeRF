@@ -80,7 +80,7 @@ def run_network(inputs, viewdirs, frame_time, fn, embed_fn, embeddirs_fn, embedt
     return outputs, position_delta
 
 
-def batchify_rays(rays_flat, chunk=128*4, **kwargs): # chunk=1024*32
+def batchify_rays(rays_flat, chunk=256*8, **kwargs): # chunk=1024*32
     """Render rays in smaller minibatches to avoid OOM.
     """
 
@@ -99,7 +99,7 @@ def batchify_rays(rays_flat, chunk=128*4, **kwargs): # chunk=1024*32
     return all_ret
 
 
-def render(H, W, focal, chunk=128*4, rays=None, c2w=None, ndc=True, # chunk=1024*32
+def render(H, W, focal, chunk=256*8, rays=None, c2w=None, ndc=True, # chunk=1024*32
                   near=0., far=1., frame_time=None,
                   use_viewdirs=False, c2w_staticcam=None,
                   **kwargs):
@@ -592,7 +592,7 @@ def config_parser():
     # training options
     parser.add_argument("--nerf_type", type=str, default="original",
                         help='nerf network type')
-    parser.add_argument("--N_iter", type=int, default=1000, # default=100000,
+    parser.add_argument("--N_iter", type=int, default=100000, # default=100000,
                         help='num training iterations')
     parser.add_argument("--netdepth", type=int, default=8,
                         help='layers in network')
@@ -602,7 +602,7 @@ def config_parser():
                         help='layers in fine network')
     parser.add_argument("--netwidth_fine", type=int, default=256, 
                         help='channels per layer in fine network')
-    parser.add_argument("--N_rand", type=int, default=4*4*1, # default=32*32*4,
+    parser.add_argument("--N_rand", type=int, default=8*8*1, # default=32*32*4,
                         help='batch size (number of random rays per gradient step)')
     parser.add_argument("--do_half_precision", action='store_true',
                         help='do half precision training and inference')

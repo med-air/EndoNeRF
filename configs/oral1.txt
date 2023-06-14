@@ -1,6 +1,6 @@
-expname = oral1v2_training_5
+expname = oral1v2_training_10
 basedir = ./logs
-datadir = ../oral1v5_endonerf/
+datadir = ../oral1v6_endonerf/
 dataset_type = llff
 
 factor = 1
@@ -18,16 +18,16 @@ davinci_endoscopic=True
 use_fgmask=True
 use_depth=True
 depth_sampling_sigma=2.0
-depth_refine_period=4000
+depth_refine_period=400000
 depth_refine_quantile=0.1
 
 nerf_type = direct_temporal
 no_batching = True
 not_zero_canonical = False
 
-i_print = 2
-i_testset = 500
-i_weights = 40
-i_video = 1000
+i_print = 200
+i_testset = 50000
+i_weights = 4000
+i_video = 100000
 video_fps = 2
 
