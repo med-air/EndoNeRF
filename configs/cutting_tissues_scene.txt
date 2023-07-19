@@ -1,0 +1,33 @@
+expname = cutting_training_2
+basedir = ./logs
+datadir = ../endonerf_sample_datasets/cutting_tissues_twice/
+dataset_type = llff
+
+factor = 1
+llffhold = 8
+llff_renderpath=fixidentity
+
+N_rand = 128
+N_samples = 4
+N_importance = 4
+
+use_viewdirs = True
+raw_noise_std = 1e0
+
+davinci_endoscopic=True
+use_fgmask=True
+use_depth=True
+depth_sampling_sigma=2.0
+depth_refine_period=4000
+depth_refine_quantile=0.1
+
+nerf_type = direct_temporal
+no_batching = True
+not_zero_canonical = False
+
+i_print = 2
+i_testset = 500
+i_weights = 40
+i_video = 1000
+video_fps = 2
+
