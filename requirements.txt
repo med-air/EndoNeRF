@@ -1,0 +1,9 @@
+numpy
+scipy
+tqdm
+lpips
+mmcv
+imageio
+imageio-ffmpeg
+opencv-python
+open3d==0.14.1
