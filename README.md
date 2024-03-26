@@ -3,8 +3,13 @@
 Official code for "Efficient EndoNeRF Reconstruction and Its
 Application for Data-driven Surgical Simulation" by *Yuehao Wang, Bingchen Gong, Yonghao Long, Siu Hin Fan, Qi Dou*.
 
-![Teaser](https://github.com/med-air/FastEndoNeRF-Sim/assets/6317569/617dce15-e4a6-482e-a55f-1579143f3605)
+![Teaser](https://github.com/med-air/EndoNeRF/assets/6317569/9cb5bed6-d3e2-42ce-a002-bb8008ce91f7)
 
+## Abstract
+
+The healthcare industry has a growing need for realistic modeling and efficient simulation of surgical scenes. With effective models of deformable surgical scenes, clinicians are able to conduct surgical planning and surgery training on scenarios close to real-world cases. However, a significant challenge in achieving such a goal is the scarcity of high-quality soft tissue models with accurate shapes and textures. To address this gap, we present a data-driven framework that leverages emerging neural radiance field technology to enable high-quality surgical reconstruction and explore its application for surgical simulations.
+We first focus on developing a fast NeRF-based surgical scene 3D reconstruction approach that achieves state-of-the-art performance. This method can significantly outperform traditional 3D reconstruction methods, which have failed to capture large deformations and produce fine-grained shapes and textures. We then propose an automated creation pipeline of interactive surgical simulation environments through a closed mesh extraction algorithm.
+Our experiments have validated the superior performance and efficiency of our proposed approach in surgical scene 3D reconstruction. We further utilize our reconstructed soft tissues to conduct FEM and MPM simulations, showcasing the practical application of our method in data-driven surgical simulations.
 
 ## Setup
 
@@ -70,8 +75,8 @@ We provide an example configuration file in `configs/endo/example.py`.
 
 The training procedure is much faster than the original EndoNeRF. Below is a comparison within the first 4min of training.
 
+https://github.com/med-air/EndoNeRF/assets/6317569/cc99c757-3646-4d2b-9abb-6c77b71e7798
 
-https://github.com/yuehaowang/FastEndoNeRF-Sim/assets/6317569/6d4aef1d-be79-4d67-9489-ef00a7eed94d
 
 
 
@@ -104,7 +109,7 @@ The closed mesh will be saved as `frame_000000_closed_mesh.obj`.
 The closed mesh asset can be imported to NVIDIA Omniverse to perform FEM simulations.
 Please follow [the documentation](https://docs.omniverse.nvidia.com/prod_extensions/prod_extensions/ext_physics/deformable-bodies.html) to create a deformable body in NVIDIA Omniverse.
 
-<img style='max-width: 900px; width: 50%;' src='https://github.com/yuehaowang/FastEndoNeRF-Sim/assets/6317569/61a3f3e2-929a-4066-b2d5-508c04d6bb49' />
+<img style='max-width: 900px; width: 50%;' src='https://github.com/med-air/EndoNeRF/assets/6317569/37bc982e-fda2-4104-a010-abd3c7d4f6b8' />
 
 ### Taichi MPM
 
@@ -140,7 +145,7 @@ python render_soft_tissues_s2.py \
 
 The particle visualizations of the MPM simulation:
 
-https://github.com/yuehaowang/FastEndoNeRF-Sim/assets/6317569/1c54e2d8-4a50-4123-bd51-cea29a7e10dc
+https://github.com/med-air/EndoNeRF/assets/6317569/b549628f-d22f-4d34-8ba1-4024bc3527a2
 
 
 
