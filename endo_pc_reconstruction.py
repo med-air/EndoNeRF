@@ -111,9 +111,9 @@ if __name__ == '__main__':
                         help='apply bilateral filtering on depth maps?')
     cfg_parser.add_argument("--depth_smoother_d", type=int, default=32,
                         help='diameter of bilateral filter for depth maps')
-    cfg_parser.add_argument("--depth_smoother_sv", type=float, default=64,
+    cfg_parser.add_argument("--depth_smoother_sv", type=float, default=64, # default=64
                         help='The greater the value, the depth farther to each other will start to get mixed')
-    cfg_parser.add_argument("--depth_smoother_sr", type=float, default=32,
+    cfg_parser.add_argument("--depth_smoother_sr", type=float, default=32, # default=32
                         help='The greater its value, the more further pixels will mix together')
     cfg_parser.add_argument("--crop_left_size", type=int, default=75,
                         help='the size of pixels to crop')

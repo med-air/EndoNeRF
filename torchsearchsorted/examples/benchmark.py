@@ -4,6 +4,8 @@ import torch
 import numpy as np
 from torchsearchsorted import searchsorted, numpy_searchsorted
 
+print(np.__version__)
+
 B = 5_000
 A = 300
 V = 100
@@ -25,14 +27,14 @@ print(
 def get_arrays():
     a = np.sort(np.random.randn(B, A), axis=1)
     v = np.random.randn(B, V)
-    out = np.empty_like(v, dtype=np.long)
+    out = np.empty_like(v, dtype=np.int64) # dtype=np.long
     return a, v, out
 
 
 def get_tensors(device):
     a = torch.sort(torch.randn(B, A, device=device), dim=1)[0]
     v = torch.randn(B, V, device=device)
-    out = torch.empty(B, V, device=device, dtype=torch.long)
+    out = torch.empty(B, V, device=device, dtype=torch.int64) # dtype=np.long
     if torch.cuda.is_available():
         torch.cuda.synchronize()
     return a, v, out
